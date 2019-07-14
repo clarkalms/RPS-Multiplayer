@@ -9,7 +9,7 @@ const scoreboard = {
 };
 
 //Play Game
-var play = function(event) {
+var play = function (event) {
   restart.style.display = "inline-block";
   let player1Choice = event.target.id;
   let player2Choice = getPlayer2Choice();
@@ -20,11 +20,11 @@ var play = function(event) {
 };
 
 //Player 2 Choice
-var getPlayer2Choice = function() {
-  const rand = Math.random();
-  if (rand < 0.34) {
+var getPlayer2Choice = function () {
+  const randNum = Math.random();
+  if (randNum < 0.34) {
     return "rock";
-  } else if (rand <= 0.67) {
+  } else if (randNum <= 0.67) {
     return "paper";
   } else {
     return "scissors";
@@ -32,7 +32,7 @@ var getPlayer2Choice = function() {
 };
 
 //Get Winner
-var getWinner = function(player1, player2) {
+var getWinner = function (player1, player2) {
   if (player1 === player2) {
     return "Draw";
   } else if (player1 === "rock") {
@@ -57,30 +57,33 @@ var getWinner = function(player1, player2) {
 };
 
 //Show Winner
-var showWinner = function(winner, player1Choice, player2Choice) {
+var showWinner = function (winner, player1Choice, player2Choice) {
   if (winner === "player1") {
     scoreboard.player1++;
     result.innerHTML = `
-        <h1 class='text-win'>Player 1 Wins!</h1>
-        <i class="fas fa-hand-${player2Choice} fa-10x"></i>
-        <p>Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() +
-          player2Choice.slice(1)}</strong></p>
-        `;
+      <h1 class='text-win'>Player 1 Wins!</h1>
+      <p>Player 1 Chose: <strong>${player1Choice.charAt(0).toUpperCase() +
+        player1Choice.slice(1)}</strong><i class="fas fa-hand-${player1Choice} fa-10x"></i></p>
+      <p id="player2">Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() + 
+        player2Choice.slice(1)}</strong><i class="fas fa-hand-${player2Choice} fa-10x"></i></p>
+      `;
   } else if (winner === "player2") {
     scoreboard.player2++;
     result.innerHTML = `
       <h1 class='text-lose'>Player 2 Wins!</h1>
-      <i class="fas fa-hand-${player1Choice} fa-10x"></i>
-      <p>Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() +
-        player2Choice.slice(1)}</strong></p>
+      <p>Player 1 Chose: <strong>${player1Choice.charAt(0).toUpperCase() + 
+        player1Choice.slice(1)}</strong><i class="fas fa-hand-${player1Choice} fa-10x"></i></p>      
+      <p id="player2">Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() +
+        player2Choice.slice(1)}</strong><i class="fas fa-hand-${player2Choice} fa-10x"></i></p>
       `;
   } else {
     result.innerHTML = `
-    <h1>It's A Draw... Try Again!</h1>
-    <i class="fas fa-hand-${player2Choice} fa-10x"></i>
-    <p>Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() +
-      player2Choice.slice(1)}</strong></p>
-    `;
+      <h1>It's A Draw... Try Again!</h1>
+      <p>Player 1 Chose: <strong>${player1Choice.charAt(0).toUpperCase() +
+        player1Choice.slice(1)}</strong><i class="fas fa-hand-${player1Choice} fa-10x"></i></p>    
+      <p id="player2">Player 2 Chose: <strong>${player2Choice.charAt(0).toUpperCase() +
+        player2Choice.slice(1)}</strong><i class="fas fa-hand-${player2Choice} fa-10x"></i></p>
+      `;
   }
   score.innerHTML = `
   <p>Player 1 Score: ${scoreboard.player1}</p>
@@ -90,14 +93,14 @@ var showWinner = function(winner, player1Choice, player2Choice) {
 };
 
 //Clear Modal
-var clearModal = function(event) {
+var clearModal = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
 
 //Restart Game
-var restartGame = function() {
+var restartGame = function () {
   scoreboard.player1 = 0;
   scoreboard.player2 = 0;
   score.innerHTML = `

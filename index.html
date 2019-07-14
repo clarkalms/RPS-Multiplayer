@@ -13,34 +13,38 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/modal.css" />
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
     <script src="https://kit.fontawesome.com/7b888d43de.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   </head>
   <body>
-      <div class="container">
-          <header class="header">
-              <h1>Rock Paper Scissors</h1>
-              <button id='restart' class='restart-btn'>Restart Game</button>
-              <div id='score' class='score'>
-                  <p>Player 1 Score: 0</p>
-                  <p>Player 2 Score: 0</p>
-              </div>
-          </header>
-          <h2>Make Your Selection</h2>
-          <div class='choices'>
-              <i id="rock" class='choice fas fa-hand-rock fa-10x'></i>
-              <i id="paper" class='choice fas fa-hand-paper fa-10x'></i>
-              <i id="scissors" class='choice fas fa-hand-scissors fa-10x'></i>
-          </div>
+    <div class="container">
+      <header class="header">
+        <h1>Rock Paper Scissors</h1>
+        <button id="restart" class="restart-btn">Restart Game</button>
+        <div id="score" class="score">
+          <p>Player 1 Score: 0</p>
+          <p>Player 2 Score: 0</p>
+        </div>
+      </header>
+      <h2>Make Your Selection</h2>
+      <div class="choices">
+        <i id="rock" class="choice fas fa-hand-rock fa-10x"></i>
+        <i id="paper" class="choice fas fa-hand-paper fa-10x"></i>
+        <i id="scissors" class="choice fas fa-hand-scissors fa-10x"></i>
       </div>
-      <div class="modal">
-          <div id="result" class="modal-content">
-          </div>
-      </div>
+    </div>
+    <div class="modal">
+      <div id="result" class="modal-content"></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/firebase.js"></script>
   </body>
 </html>
