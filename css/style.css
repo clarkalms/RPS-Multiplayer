@@ -30,9 +30,26 @@ body {
     padding: 0 2rem;
     text-align: center;
 }
+.start-btn {
+    display: inline-block;
+    background: var(--light-color);
+    color: #333;
+    padding: 0.4rem 1.3;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+
+.start-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
 
 .restart-btn {
-    display: none;
+    display: inline-block;
     background: var(--light-color);
     color: #333;
     padding: 0.4rem 1.3;
@@ -77,7 +94,7 @@ body {
 }
 
 .choices {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
